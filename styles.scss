@@ -93,7 +93,8 @@ body {
   align-items: center;
   position: relative;
   opacity: 0;
-  animation: fadeInFromTop 3s forwards;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 
   img {
     width: 310px;
@@ -111,5 +112,8 @@ body {
     font-size: 14px;
     font-weight: 600;
     color: #333;
-  }  
+  }
+}
+.show {
+  animation: fadeInFromTop 1s forwards;
 }

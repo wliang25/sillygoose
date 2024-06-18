@@ -137,14 +137,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
   const polaroidContainter = document.getElementById('polaroid-container');
-  polaroids.forEach(polaroid => {
+  polaroids.forEach((polaroid, index) => {
     const polaroidElement = document.createElement('div');
     polaroidElement.className = 'polaroid';
     polaroidElement.innerHTML = `
-        <img src="${polaroid.imgSrc}" alt="${polaroid.title}">
+        <img src="imgs/${polaroid.imgSrc}" alt="${polaroid.title}">
         <div class="title">${polaroid.title}</div>
         <div class="caption">${polaroid.description}</div>
     `;
     polaroidContainter.appendChild(polaroidElement);
+    setTimeout(() => {
+        polaroidElement.classList.add('show');
+    }, index * 1000); // Delay each polaroid by 500ms multiplied by its index
 });
 });
