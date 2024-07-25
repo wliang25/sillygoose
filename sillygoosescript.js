@@ -141,13 +141,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const polaroidElement = document.createElement('div');
     polaroidElement.className = 'polaroid';
     polaroidElement.innerHTML = `
-        <img src="imgs/${polaroid.imgSrc}" alt="${polaroid.title}">
-        <div class="title">${polaroid.title}</div>
-        <div class="caption">${polaroid.description}</div>
+      <img src="imgs/${polaroid.imgSrc}" alt="${polaroid.title}">
+      <div class="title">${polaroid.title}</div>
+      <div class="caption">${polaroid.description}</div>
     `;
+    polaroidElement.onclick = () => {
+      
+    };
     polaroidContainter.appendChild(polaroidElement);
     setTimeout(() => {
-        polaroidElement.classList.add('show');
+      polaroidElement.classList.add('show');
     }, index * 1000); // Delay each polaroid by 500ms multiplied by its index
-});
+  });
+
+  // Attempt at creating auto scroll as polaroids show on page
+  // let scrollPosition = 0;
+  // const scrollSpeed = 100;
+  // const scrollInterval = setInterval(() => {
+  //   scrollPosition += scrollSpeed;
+  //   window.scrollTo(0, scrollPosition);
+  //   if (scrollPosition >= document.body.scrollHeight - window.innerHeight) {
+  //     clearInterval(scrollInterval); // Stop scrolling when at bottom
+  //   }
+  // }, 500);
 });
